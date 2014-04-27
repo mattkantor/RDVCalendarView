@@ -23,6 +23,7 @@
 
 #import "RDVCalendarView.h"
 #import "RDVCalendarDayCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface RDVCalendarView () {
     NSMutableArray *_visibleCells;
@@ -62,8 +63,8 @@
         _separators = [[NSMutableArray alloc] initWithCapacity:12];
         
         // Setup defaults
-        
-        _currentDayColor = [UIColor colorWithRed:80/255.0 green:200/255.0 blue:240/255.0 alpha:1.0];
+        //e09422 224 148 34
+        _currentDayColor = [UIColor colorWithRed:224/255.0 green:148/255.0 blue:34/255.0 alpha:1.0];
         _selectedDayColor = [UIColor grayColor];
         _separatorColor = [UIColor lightGrayColor];
         
@@ -77,19 +78,22 @@
         // Setup header view
         
         _monthLabel = [[UILabel alloc] init];
-        [_monthLabel setFont:[UIFont fontWithName:@"OpenSans" size:22]];
+        [_monthLabel setFont:[UIFont fontWithName:@"OpenSans" size:20]];
         [_monthLabel setTextColor:[UIColor blackColor]];
         [_monthLabel setTextAlignment:NSTextAlignmentCenter];
         [self addSubview:_monthLabel];
         
         _backButton = [[UIButton alloc] init];
         [_backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_backButton.titleLabel setFont:[UIFont fontWithName:@"OpenSans" size:16]];
         [_backButton setTitle:@"Prev" forState:UIControlStateNormal];
         [_backButton addTarget:self action:@selector(showPreviousMonth)
               forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backButton];
         
         _forwardButton = [[UIButton alloc] init];
+        [_forwardButton.titleLabel setFont:[UIFont fontWithName:@"OpenSans" size:16]];
+
         [_forwardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_forwardButton setTitle:@"Next" forState:UIControlStateNormal];
         [_forwardButton addTarget:self action:@selector(showNextMonth)
@@ -491,6 +495,8 @@
             [self month].month == [self currentDay].month &&
             [self month].year == [self currentDay].year) {
             [[dayCell backgroundView] setBackgroundColor:[self currentDayColor]];
+            [dayCell backgroundView].layer.cornerRadius = 5;
+            [dayCell backgroundView].layer.masksToBounds = YES;
         } else {
             [[dayCell backgroundView] setBackgroundColor:[self normalDayColor]];
         }

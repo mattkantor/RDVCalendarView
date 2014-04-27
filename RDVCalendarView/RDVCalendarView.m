@@ -502,6 +502,10 @@
         }
         
         [[dayCell selectedBackgroundView] setBackgroundColor:[self selectedDayColor]];
+         [dayCell selectedBackgroundView].layer.cornerRadius = 5;
+        [dayCell selectedBackgroundView].layer.masksToBounds = YES;
+        
+        
         
         [dayCell setNeedsLayout];
     }

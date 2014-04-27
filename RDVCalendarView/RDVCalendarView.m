@@ -77,20 +77,20 @@
         // Setup header view
         
         _monthLabel = [[UILabel alloc] init];
-        [_monthLabel setFont:[UIFont systemFontOfSize:22]];
+        [_monthLabel setFont:[UIFont fontWithName:@"OpenSans" size:22]];
         [_monthLabel setTextColor:[UIColor blackColor]];
         [_monthLabel setTextAlignment:NSTextAlignmentCenter];
         [self addSubview:_monthLabel];
         
         _backButton = [[UIButton alloc] init];
-        [_backButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_backButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_backButton setTitle:@"Prev" forState:UIControlStateNormal];
         [_backButton addTarget:self action:@selector(showPreviousMonth)
               forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_backButton];
         
         _forwardButton = [[UIButton alloc] init];
-        [_forwardButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_forwardButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_forwardButton setTitle:@"Next" forState:UIControlStateNormal];
         [_forwardButton addTarget:self action:@selector(showNextMonth)
                  forControlEvents:UIControlEventTouchUpInside];
@@ -346,7 +346,7 @@
         
         for (NSString *weekDayString in _weekDays) {
             UILabel *weekDayLabel = [[UILabel alloc] init];
-            [weekDayLabel setFont:[UIFont systemFontOfSize:14]];
+            [weekDayLabel setFont:[UIFont fontWithName:@"OpenSans" size:14]];
             [weekDayLabel setTextColor:[UIColor grayColor]];
             [weekDayLabel setTextAlignment:NSTextAlignmentCenter];
             [weekDayLabel setText:weekDayString];

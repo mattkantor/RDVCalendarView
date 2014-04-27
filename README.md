@@ -1,5 +1,9 @@
 # RDVCalendarView
 
+## Notes on Fork
+
+This fork removes some of the font settings that are hardcoded into the project.  This fork is specific to a project I'm working on.
+
 [![iPad screenshot](Screenshots/iPad-small.png)](Screenshots/iPad.png)
 
 [![iPhone screenshot](Screenshots/iPhone-small.png)](Screenshots/iPhone.png)

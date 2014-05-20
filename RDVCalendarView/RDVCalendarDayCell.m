@@ -55,7 +55,7 @@
         [_textLabel setTextColor:[UIColor blackColor]];
         [_textLabel setHighlightedTextColor:[UIColor whiteColor]];
         [_textLabel setBackgroundColor:[UIColor clearColor]];
-        [_textLabel setFont:[UIFont systemFontOfSize:20]];
+       
         [_contentView addSubview:_textLabel];
     }
     return self;
